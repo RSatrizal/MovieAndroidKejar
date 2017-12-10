@@ -1,6 +1,6 @@
 package com.example.acer.movieandroidkejar.data;
 
-import com.example.acer.movieandroidkejar.dao.MovieResponseDao;
+import com.example.acer.movieandroidkejar.data.dao.MovieResponseDao;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

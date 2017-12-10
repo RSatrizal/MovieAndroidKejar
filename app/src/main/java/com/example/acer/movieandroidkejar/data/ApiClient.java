@@ -1,5 +1,8 @@
 package com.example.acer.movieandroidkejar.data;
 
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerViewAccessibilityDelegate;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -18,4 +21,5 @@ public class ApiClient {
         return retrofit.create(ApiRequestInterface.class);
 
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.acer.movieandroidkejar.main;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.acer.movieandroidkejar.R;
+import com.example.acer.movieandroidkejar.detail.DetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -37,11 +39,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainHolder>{
         holder.textTitleRow.setText(mData.get(position).getTitle());
         Picasso.with(holder.imageRow.getContext())
                 .load(mData.get(position).getImageUrl())
+                .placeholder(R.drawable.gunmoney)
                 .into(holder.imageRow);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), mData.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(view.getContext(), mData.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                intent.putExtra("dataMovie", mData.get(position));
+                view.getContext().startActivity(intent);
             }
         });
     }
